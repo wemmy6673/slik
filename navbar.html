@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="tailwind.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="bg-red-600">
+      <div class="flex flex-row justify-between items-center p-9">
+        <img src="images/logo1.png" alt="" />
+
+        <div class="hidden md:flex md:flex-row space-x-4">
+          <p class="text-white">Contact</p>
+          <p class="text-white">Our Services</p>
+          <p class="text-white">Legal</p>
+        </div>
+
+        <div class="hidden md:flex md:flex-row space-x-6">
+          <p class="text-white items-center md:mt-2">Join Us</p>
+          <button class="bg-white text-red-600 rounded-md p-2">
+            Get Started
+          </button>
+        </div>
+        <!-- responsive -->
+        <div
+          class="bg-black/60 md:hidden fixed w-full top-0 right-0 left-0 bottom-0 z-10 hidden"
+          id = "overlay"
+          
+        ></div>
+        
+
+        <div
+          class="bg-red-600 flex flex-col items-center shadow-2xl z-20 fixed w-[70%] max-w-md mx-auto space-y-6 py-12 md:hidden top-0 right-0 bottom-0 hidden"
+          id="container"
+        >
+
+          <i
+            class="bi bi-x text-white text-2xl absolute top-0 right-2 cursor-pointer"
+            id="cancel"
+          ></i>
+          <p class="text-white">Contact</p>
+          <p class="text-white">Our Services</p>
+          <p class="text-white">Legal</p>
+
+          <p class="text-white items-center md:mt-2">Join Us</p>
+          <button class="bg-white text-red-600 rounded-md p-2">
+            Get Started
+          </button>
+        </div>
+      </div>
+      <i class="bi bi-list text-white text-2xl md:hidden" id="hamburger"></i>
+    </div>
+
+    <script>
+      const sidebar = document.getElementById("container");
+      const overlay = document.getElementById("overlay");
+      const cancel = document.getElementById("cancel");
+      const menu = document.getElementById("hamburger");
+
+      menu.addEventListener("click", function (e) {
+        const classes = sidebar.className.split(" ");
+
+        const newClasses = classes.filter((i) => i !== "hidden");
+
+        sidebar.className = newClasses.join(" ");
+
+        const overlayClasses = overlay.className.split(" ");
+
+        const overlayNewClasses = overlayClasses.filter((i) => i !== "hidden");
+
+        overlay.className = overlayNewClasses.join(" ");
+
+        
+      });
+
+
+      cancel.addEventListener("click", function(e){
+
+        overlay.className  += " hidden ";
+        sidebar.className += " hidden ";
+
+
+
+
+
+      })
+    </script>
+  </body>
+</html>
