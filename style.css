@@ -26,12 +26,9 @@ body.modal-active {
   overflow-y: visible !important;
 }
 body{
-  font-family: 'Poppins', sans-serif;
-  font-family: 'PT Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 footer{
-  font-family: 'Poppins', sans-serif;
-font-family: 'PT Sans', sans-serif;
-font-family: 'Roboto', sans-serif
+  font-family: 'Maven Pro', sans-serif;
+  
 }
